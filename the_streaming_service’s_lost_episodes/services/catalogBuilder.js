@@ -90,9 +90,11 @@ class CatalogBuilder {
             this.insertEpisode(catalog, episode);
         }
 
-        this.totalOutputs = new Set(catalog.values()).size; // Solo contamos los valores únicos, no las claves
+        const setCatalog = new Set(catalog.values());
 
-        return catalog;
+        this.totalOutputs = setCatalog.size; // Solo contamos los valores únicos, no las claves
+
+        return setCatalog;
     }
 
 
